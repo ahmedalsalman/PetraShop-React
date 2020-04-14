@@ -2,7 +2,7 @@ import { SET_PRODUCTS, GET_DETAILS } from "../actions/actionTypes";
 
 const initialState = {
   products: [],
-  detail: [],
+  detail: [], //should be null
 };
 
 const reducer = (state = initialState, action) => {

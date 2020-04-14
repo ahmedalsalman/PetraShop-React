@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import { fetchProductDetail } from "../redux/actions";
 import { connect } from "react-redux";
 
+// rename to ProductCard, singular not plural
 class ProductsCard extends Component {
   render() {
+    // probably define product here so you don't have to retype "this.props."
     return (
       <div className="col-lg-4 col-md-6 col-12">
         <Link to={`/products/${this.props.product.id}`} className="card">

@@ -18,7 +18,7 @@ export const fetchProducts = () => async (dispatch) => {
 export const fetchProductDetail = (productID) => async (dispatch) => {
   try {
     const res = await instance.get(`/product-detail/${productID}`);
-    console.log(res);
+    console.log(res); // remove these console.log()s before merging into master.
     const product = res.data;
     dispatch({
       type: GET_DETAILS,
