@@ -4,11 +4,11 @@ import { fetchProductDetail } from "../redux/actions";
 import { connect } from "react-redux";
 
 class ProductsDetail extends Component {
-  componentDidMount() {
-    fetchProductDetail(this.props.match.params.productID);
-  }
+  // componentDidMount() {
+  //   this.props.fetchProductDetail(this.props.match.params.productID);
+  // }
   render() {
-    if (this.props.loading) return <p>Loading...</p>;
+    if (!this.props.product) return <p>Loading...</p>;
     return (
       <div className="author">
         <div>
@@ -33,10 +33,8 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchProductDetail: (productID) => dispatch(fetchProductDetail(productID)),
-  };
-};
+const mapDispatchToProps = (dispatch) => ({
+  fetchProductDetail: (productID) => dispatch(fetchProductDetail(productID)),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductsDetail);
