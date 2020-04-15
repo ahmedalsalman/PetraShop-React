@@ -11,7 +11,7 @@ const reducer = (state = initialState, action) => {
       let products = action.payload;
       return { ...state, products };
     case GET_DETAILS:
-      const detail = action.payload;
+      let detail = action.payload;
       return { ...state, detail };
     default:
       return state;

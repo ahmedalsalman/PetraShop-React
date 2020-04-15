@@ -13,7 +13,7 @@ class ProductsList extends Component {
     ));
 
     return (
-      <div className="products">
+      <div className="container">
         <h3>Products</h3>
         <div className="row">{productCards}</div>
       </div>

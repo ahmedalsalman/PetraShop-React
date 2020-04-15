@@ -4,7 +4,7 @@ import instance from "./instance";
 
 export const fetchProducts = () => async (dispatch) => {
   try {
-    const res = await instance.get("product-list/");
+    const res = await instance.get("products/");
     const products = res.data;
     dispatch({
       type: SET_PRODUCTS,
@@ -17,7 +17,7 @@ export const fetchProducts = () => async (dispatch) => {
 
 export const fetchProductDetail = (productID) => async (dispatch) => {
   try {
-    const res = await instance.get(`/product-detail/${productID}`);
+    const res = await instance.get(`products/${productID}/`);
     console.log(res);
     const product = res.data;
     dispatch({
