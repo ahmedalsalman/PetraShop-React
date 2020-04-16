@@ -1,20 +1,22 @@
 import jwt_decode from "jwt-decode";
 import { SET_CURRENT_USER } from "./actionTypes";
 import { resetErrors, setErrors } from "./index";
+import { fetchCart } from "./cart";
 import instance from "./instance";
 
 export const checkForExpiredToken = () => {
   return (dispatch) => {
-    const token = localStorage.getItem("token");
+    const access = localStorage.getItem("access");
 
-    if (token) {
+    if (access) {
       const currentTime = Date.now() / 1000;
 
-      const user = jwt_decode(token);
+      const user = jwt_decode(access);
       if (user.exp >= currentTime) {
-        setLocalStorage(token);
-        setAuthToken(token);
+        setLocalStorage(access);
+        setAuthToken(access);
         dispatch(setCurrentUser(user));
+        dispatch(fetchCart(user.user_id));
       } else {
         dispatch(logout());
       }
@@ -22,17 +24,17 @@ export const checkForExpiredToken = () => {
   };
 };
 
-const setLocalStorage = (token) => {
-  if (token) {
-    localStorage.setItem("token", token);
+const setLocalStorage = (access) => {
+  if (access) {
+    localStorage.setItem("access", access);
   } else {
-    localStorage.removeItem("token");
+    localStorage.removeItem("access");
   }
 };
 
-const setAuthToken = (token) => {
-  if (token) {
-    instance.defaults.headers.common.Authorization = `Bearer ${token}`;
+const setAuthToken = (access) => {
+  if (access) {
+    instance.defaults.headers.common.Authorization = `Bearer ${access}`;
   } else {
     delete instance.defaults.headers.common.Authorization;
   }
@@ -53,6 +55,7 @@ export const registerForm = (userData, history, type) => async (dispatch) => {
     setLocalStorage(access);
     setAuthToken(access);
     dispatch(setCurrentUser(decodeUser));
+    dispatch(fetchCart(decodeUser.user_id));
     if (type) history.push("/products");
   } catch (error) {
     dispatch(setErrors(error.response.data));

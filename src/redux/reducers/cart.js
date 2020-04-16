@@ -1,7 +1,15 @@
-import { ADD_ITEM, REMOVE_ITEM, CHECKOUT } from "../actions/actionTypes";
+import {
+  SET_CART,
+  ADD_ITEM,
+  REMOVE_ITEM,
+  CHECKOUT,
+} from "../actions/actionTypes";
 
 export default (items = [], { type, payload }) => {
   switch (type) {
+    case SET_CART:
+      return { ...items, items: payload };
+
     case ADD_ITEM:
       const newItem = payload;
       const foundItem = items.find(

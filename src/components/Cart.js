@@ -6,7 +6,8 @@ import CartItem from "./CartItem";
 import { checkoutCart } from "../redux/actions";
 
 const Cart = ({ cart, checkoutCart }) => {
-  const cartItems = cart.map((item) => (
+  if (!cart.items) return <h1>Loading...</h1>;
+  const cartItems = cart.items.map((item) => (
     <CartItem item={item} key={item.name + item.category} />
   ));
 
