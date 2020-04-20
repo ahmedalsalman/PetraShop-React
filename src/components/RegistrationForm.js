@@ -40,9 +40,7 @@ class RegistationForm extends Component {
       <div className="card col-6 mx-auto p-0 mt-5">
         <div className="card-body">
           <h5 className="card-title mb-4 log">
-            {type === "login"
-              ? "Login to send messages"
-              : "Register an account"}
+            {type === "login" ? "Login" : "Register an account"}
           </h5>
           <form onSubmit={this.submitHandler}>
             <div className="form-group">
@@ -56,6 +54,7 @@ class RegistationForm extends Component {
               />
               <div className="invalid-feedback">{errors.username}</div>
             </div>
+
             <div className="form-group">
               <input
                 className={`form-control ${
@@ -70,6 +69,50 @@ class RegistationForm extends Component {
               />
               <div className="invalid-feedback">{errors.non_field_errors}</div>
             </div>
+            {type !== "login" && (
+              <>
+                <div className="form-group">
+                  <input
+                    className={`form-control ${errors.email && "is-invalid"}`}
+                    type="text"
+                    placeholder="email"
+                    name="email"
+                    value={this.state.email}
+                    onChange={this.changeHandler}
+                  />
+                  <div className="invalid-feedback">{errors.email}</div>
+                </div>
+
+                <div className="form-group">
+                  <input
+                    className={`form-control ${
+                      errors.first_name && "is-invalid"
+                    }`}
+                    type="text"
+                    placeholder="first_name"
+                    name="first_name"
+                    value={this.state.first_name}
+                    onChange={this.changeHandler}
+                  />
+                  <div className="invalid-feedback">{errors.first_name}</div>
+                </div>
+
+                <div className="form-group">
+                  <input
+                    className={`form-control ${
+                      errors.last_name && "is-invalid"
+                    }`}
+                    type="text"
+                    placeholder="last_name"
+                    name="last_name"
+                    value={this.state.last_name}
+                    onChange={this.changeHandler}
+                  />
+                  <div className="invalid-feedback">{errors.last_name}</div>
+                </div>
+              </>
+            )}
+
             <input
               className="btn btn-dark"
               type="submit"

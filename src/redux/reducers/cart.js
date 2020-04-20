@@ -1,33 +1,32 @@
 import {
-  SET_CART,
-  ADD_ITEM,
+  ADD_ITEM_TO_CART,
   REMOVE_ITEM,
   CHECKOUT,
+  SET_CART,
 } from "../actions/actionTypes";
 
-export default (items = [], { type, payload }) => {
+const initialState = { items: [] };
+export default (state = initialState, { type, payload }) => {
   switch (type) {
-    case SET_CART:
-      return { ...items, items: payload };
-
-    case ADD_ITEM:
-      const newItem = payload;
-      const foundItem = items.find(
-        (item) => item.drink === newItem.drink && item.option === newItem.option
-      );
-      if (foundItem) {
-        return items.map((item) =>
-          item === foundItem ? { ...item, quantity: item.quantity + 1 } : item
-        );
-      } else return [...items, { ...newItem, quantity: 1 }];
+    case ADD_ITEM_TO_CART:
+      const item = payload;
+      return {
+        ...state,
+        items: [...state.items, item],
+      };
 
     case REMOVE_ITEM:
-      return items.filter((item) => item !== payload);
+      return state.filter((item) => item !== payload);
 
     case CHECKOUT:
       return [];
 
+    case SET_CART:
+      return {
+        ...state,
+        items: payload,
+      };
     default:
-      return items;
+      return state;
   }
 };

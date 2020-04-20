@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+/* card {
+  background: rgba(140, 33, 112, 0.7964227927499125);
+  border-radius: 2px;
+  border-width: 40px;
+  display: inline-block;
+  height: 300px;
+  margin: 1rem;
+  position: relative;
+  width: 300px;
+}
+.card-5 {
+  box-shadow: 0 10px 30px #09323d, 0 15px 12px rgba(0, 0, 0, 0.22);
+} */

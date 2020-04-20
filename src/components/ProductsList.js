@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-
+import "./carousel.css";
 // Components
 import ProductsCard from "./ProductsCard";
 

@@ -56,7 +56,7 @@ export const registerForm = (userData, history, type) => async (dispatch) => {
     setAuthToken(access);
     dispatch(setCurrentUser(decodeUser));
     dispatch(fetchCart(decodeUser.user_id));
-    if (type) history.push("/products");
+    if (type) history.push("/home");
   } catch (error) {
     dispatch(setErrors(error.response.data));
     console.error(error.response.data);

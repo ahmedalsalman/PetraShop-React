@@ -6,11 +6,7 @@ import { fetchProductDetail } from "../redux/actions";
 
 const CartItem = ({ item, removeItemFromCart }) => (
   <div className="col-lg-4 col-md-6 col-12">
-    <Link
-      to={`/products/${item.product.id}`}
-      className="card"
-      onClick={() => this.props.fetchProductDetail(item.product.id)}
-    >
+    <Link to={`/products/${item.product.id}`} className="card">
       <div className="card-body">
         <h5 className="card-title">{item.product.name}</h5>
         <h5 className="card-title">{item.count}</h5>
@@ -18,7 +14,7 @@ const CartItem = ({ item, removeItemFromCart }) => (
       <div className="image">
         <img
           className="card-img-top img-fluid"
-          src={`${item.product.image1}`}
+          src={item.product.image1}
           alt={item.product.image1}
           length="200"
           width="200"

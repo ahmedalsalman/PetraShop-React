@@ -1,0 +1,281 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import "./navbar.css";
+
+const NavBar = ({ user }) => (
+  <header>
+    <nav
+      class="navbar fixed-top navbar-toggleable navbar-expand-sm scrolling-navbar navbar-alert  mb-5"
+      // style={{ "background-color": "rgba(59, 0, 83, 0.836)" }}
+    >
+      <div class="float-left mr-3">
+        <a href="#" data-activates="slide-out" class="button-collapse">
+          <i class="fas fa-bars"></i>
+        </a>
+      </div>
+
+      <a class="navbar-brand" href="#">
+        <img src="#" height="30px" alt="" />
+      </a>
+
+      <div class="breadcrumb mr-auto white-text">
+        <p>MDB</p>
+      </div>
+
+      <ul class="nav navbar-nav nav-flex-icons ml-auto">
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown"
+            id="menu1"
+            href="#"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <i className="far fa-bell"></i>
+            <span class="mycounter bg-danger">98</span>
+          </a>
+          <div
+            class="dropdown-menu dropdown-menu-right bootstrap-menu  white scrollbar-default"
+            aria-labelledby="menu1"
+          >
+            <a class="dropdown-item-custom" href="#">
+              <p class="content-3-lines">
+                Les élèves de 4e B et 3e D du Collège Jean Moulin de
+                Saint-Jacques de la Lande (35) ont enquêté durant trois mois sur
+                la pollution de l'air en général, et dans leur commune en
+                particulier. Une classe a publié son travail sous forme
+                d'article, paru dans le magazine Sciences Ouest de mars 2019
+                https://www.espace-sciences.org/scien... ; l'autre sous forme de
+                vidéo, diffusée par l'Espace des sciences
+              </p>
+            </a>
+            <a class="dropdown-item-custom" href="#">
+              <p class="content-3-lines">
+                Les élèves de 4e B et 3e D du Collège Jean Moulin de
+                Saint-Jacques de la Lande (35) ont enquêté durant trois mois sur
+                la pollution de l'air en général, et dans leur commune en
+                particulier. Une classe a publié son travail sous forme
+                d'article, paru dans le magazine Sciences Ouest de mars 2019
+                https://www.espace-sciences.org/scien... ; l'autre sous forme de
+                vidéo, diffusée par l'Espace des sciences
+              </p>
+            </a>
+            <a class="dropdown-item-custom" href="#">
+              <p class="content-3-lines">
+                Les élèves de 4e B et 3e D du Collège Jean Moulin de
+                Saint-Jacques de la Lande (35) ont enquêté durant trois mois sur
+                la pollution de l'air en général, et dans leur commune en
+                particulier. Une classe a publié son travail sous forme
+                d'article, paru dans le magazine Sciences Ouest de mars 2019
+                https://www.espace-sciences.org/scien... ; l'autre sous forme de
+                vidéo, diffusée par l'Espace des sciences
+              </p>
+            </a>
+            <a class="dropdown-item-custom" href="#">
+              <p class="content-3-lines">
+                Les élèves de 4e B et 3e D du Collège Jean Moulin de
+                Saint-Jacques de la Lande (35) ont enquêté durant trois mois sur
+                la pollution de l'air en général, et dans leur commune en
+                particulier. Une classe a publié son travail sous forme
+                d'article, paru dans le magazine Sciences Ouest de mars 2019
+                https://www.espace-sciences.org/scien... ; l'autre sous forme de
+                vidéo, diffusée par l'Espace des sciences
+              </p>
+            </a>
+            <a class="dropdown-item-custom" href="#">
+              <p class="content-3-lines">
+                Les élèves de 4e B et 3e D du Collège Jean Moulin de
+                Saint-Jacques de la Lande (35) ont enquêté durant trois mois sur
+                la pollution de l'air en général, et dans leur commune en
+                particulier. Une classe a publié son travail sous forme
+                d'article, paru dans le magazine Sciences Ouest de mars 2019
+                https://www.espace-sciences.org/scien... ; l'autre sous forme de
+                vidéo, diffusée par l'Espace des sciences
+              </p>
+            </a>
+            <a class="dropdown-item-custom" href="#">
+              <p class="content-3-lines">
+                Les élèves de 4e B et 3e D du Collège Jean Moulin de
+                Saint-Jacques de la Lande (35) ont enquêté durant trois mois sur
+                la pollution de l'air en général, et dans leur commune en
+                particulier. Une classe a publié son travail sous forme
+                d'article, paru dans le magazine Sciences Ouest de mars 2019
+                https://www.espace-sciences.org/scien... ; l'autre sous forme de
+                vidéo, diffusée par l'Espace des sciences
+              </p>
+            </a>
+            <a class="dropdown-item-custom" href="#">
+              <p class="content-3-lines">
+                Les élèves de 4e B et 3e D du Collège Jean Moulin de
+                Saint-Jacques de la Lande (35) ont enquêté durant trois mois sur
+                la pollution de l'air en général, et dans leur commune en
+                particulier. Une classe a publié son travail sous forme
+                d'article, paru dans le magazine Sciences Ouest de mars 2019
+                https://www.espace-sciences.org/scien... ; l'autre sous forme de
+                vidéo, diffusée par l'Espace des sciences
+              </p>
+            </a>
+            <a class="dropdown-item-custom" href="#">
+              <p class="content-3-lines">
+                Les élèves de 4e B et 3e D du Collège Jean Moulin de
+                Saint-Jacques de la Lande (35) ont enquêté durant trois mois sur
+                la pollution de l'air en général, et dans leur commune en
+                particulier. Une classe a publié son travail sous forme
+                d'article, paru dans le magazine Sciences Ouest de mars 2019
+                https://www.espace-sciences.org/scien... ; l'autre sous forme de
+                vidéo, diffusée par l'Espace des sciences
+              </p>
+            </a>
+            <a class="dropdown-item-custom" href="#">
+              <p class="content-3-lines">
+                Les élèves de 4e B et 3e D du Collège Jean Moulin de
+                Saint-Jacques de la Lande (35) ont enquêté durant trois mois sur
+                la pollution de l'air en général, et dans leur commune en
+                particulier. Une classe a publié son travail sous forme
+                d'article, paru dans le magazine Sciences Ouest de mars 2019
+                https://www.espace-sciences.org/scien... ; l'autre sous forme de
+                vidéo, diffusée par l'Espace des sciences
+              </p>
+            </a>
+            <a class="dropdown-item-custom" href="#">
+              <p class="content-3-lines">
+                Les élèves de 4e B et 3e D du Collège Jean Moulin de
+                Saint-Jacques de la Lande (35) ont enquêté durant trois mois sur
+                la pollution de l'air en général, et dans leur commune en
+                particulier. Une classe a publié son travail sous forme
+                d'article, paru dans le magazine Sciences Ouest de mars 2019
+                https://www.espace-sciences.org/scien... ; l'autre sous forme de
+                vidéo, diffusée par l'Espace des sciences
+              </p>
+            </a>
+            <a class="dropdown-item-custom" href="#">
+              Another action
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item-custom" href="#">
+              Something else here
+            </a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown"
+            id="menu2"
+            href="#"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <i class="far fa-comment-alt"></i>
+            <span class="mycounter bg-primary">3</span>
+          </a>
+          <div
+            class="dropdown-menu dropdown-menu-right scrollbar-default"
+            aria-labelledby="menu2"
+          >
+            <a class="dropdown-item" href="#">
+              Action
+            </a>
+            <a class="dropdown-item" href="#">
+              Another action
+            </a>
+            <a class="dropdown-item" href="#">
+              Something else here
+            </a>
+          </div>
+        </li>
+        <li class="nav-item avatar dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            id="navbarDropdownMenuLink-55"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <img
+              src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg"
+              class="rounded-circle z-depth-0"
+              alt="avatar image"
+            />
+          </a>
+          <div
+            class="dropdown-menu dropdown-menu-right scrollbar-default"
+            aria-labelledby="navbarDropdownMenuLink-55"
+          >
+            <div class="container">
+              <div class="row text-center">
+                <div class="col-3">
+                  <div class="avatar">
+                    <img
+                      id="userImageProfile"
+                      src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg"
+                      height="80"
+                      class="rounded z-depth-1-half"
+                      alt="@user.UserName"
+                    />
+                  </div>
+                </div>
+                <div class="col-9">
+                  <h5 class="font-weight-bold dark-grey-text">
+                    @user.UserName
+                  </h5>
+                  <h6 class="grey-text">
+                    <strong>@user.Email</strong>
+                  </h6>
+                  <a
+                    asp-page="/Account/Manage/User"
+                    class="btn btn-rounded btn-danger btn-sm text-white px-2 py-1"
+                  >
+                    <small>
+                      <i class="far fa-user pr-2" aria-hidden="true"></i>Mon
+                      Compte
+                    </small>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="dropdown-divider"></div>
+            <h6 class="dropdown-header">Mon Compte</h6>
+            <a class="dropdown-item" href="/Account/Manage/Mailbox">
+              <i class="far fa-comment-alt mr-1"></i>Ma Messagerie
+            </a>
+            <a class="dropdown-item" href="/Account/Manage/Notifications">
+              <i class="far fa-bell mr-1"></i>Mes notifications
+            </a>
+            <div class="dropdown-divider"></div>
+            <h6 class="dropdown-header">Administration</h6>
+            <a class="dropdown-item" href="/Account/Manage/Chat">
+              <i class="fas fa-comments mr-1"></i>Discussion
+            </a>
+            <a class="dropdown-item" href="/Admin/Users">
+              <i class="fas fa-users mr-1"></i>Gestion des utilisateurs
+            </a>
+            <a class="dropdown-item" href="/Admin/SendNotifications">
+              <i class="fas fa-paper-plane mr-1"></i>Envoyer notifications
+            </a>
+            <a class="dropdown-item" href="/Admin/Dashboard">
+              <i class="fas fa-tachometer-alt mr-1"></i>Tableau de bord
+            </a>
+            <a class="dropdown-item" href="/Admin/JavascriptConsole">
+              <i class="fas fa-bug mr-1"></i>Console Javascript
+            </a>
+            <div class="dropdown-divider"></div>
+            <form method="post">
+              <button class="dropdown-item">
+                <i class="fas fa-power-off mr-1"></i>Déconnexion
+              </button>
+            </form>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+);
+
+const mapStateToProps = ({ user }) => ({ user });
+
+export default connect(mapStateToProps)(NavBar);
